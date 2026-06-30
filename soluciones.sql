@@ -8,9 +8,9 @@
 -- Pregunta de negocio: ¿Qué productos del catálogo nunca fueron vendidos?
 -- Mostrá todos los productos y sus ventas asociadas.
 -- Los productos sin ventas aparecerán con NULL en las columnas de ventas.
-select p.producto_id, p.nombre 
-from productos p left outer join ventas v on p.producto_id = v.producto_id
-where v.venta_id is null
+select distinct p.producto_id, p.nombre 
+from productos p left join ventas v on p.producto_id = v.producto_id
+where v.venta_id is null;
 
 
 -- ── CONSULTA 2: RIGHT JOIN ────────────────
@@ -19,8 +19,8 @@ where v.venta_id is null
 -- Los registros huérfanos aparecerán con NULL en las columnas de productos.
 
 select v.venta_id,v.producto_id,cliente_id, cantidad, fecha_venta
-from productos p right outer join ventas v on p.producto_id = v.producto_id
-where p.producto_id is null
+from productos p right join ventas v on p.producto_id = v.producto_id
+where p.producto_id is null;
 
 
 -- ── CONSULTA 3: FULL OUTER JOIN ───────────
@@ -29,5 +29,5 @@ where p.producto_id is null
 -- identificando tanto productos sin ventas como ventas sin producto.
 
 select v.venta_id,v.producto_id,cliente_id, cantidad, fecha_venta,p.producto_id, p.nombre, p.categoria, p.precio
-from productos p full outer join ventas v on p.producto_id = v.producto_id
+from productos p full join ventas v on p.producto_id = v.producto_id;
 
