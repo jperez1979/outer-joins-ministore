@@ -1,7 +1,7 @@
 -- ══════════════════════════════════════════
 -- MiniStore — Soluciones con Outer JOINs
--- Autor: [Tu nombre]
--- Fecha: [Fecha de entrega]
+-- Autor: JESUS PEREZ
+-- Fecha: 30/06/2026
 -- ══════════════════════════════════════════
 
 -- ── CONSULTA 1: LEFT JOIN ─────────────────
